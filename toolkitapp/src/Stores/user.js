@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
     name: "Wakamori",
     age: 24,
-    skills: ['js', 'react', 'firebase']
+    skills: ['js', 'react', 'firebase'],
     imageUrl: '',
 };
 
