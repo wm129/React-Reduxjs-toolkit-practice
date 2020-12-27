@@ -24,6 +24,12 @@ const slice = createSlice({
                 age: state.age + 1,
             }
         },
+        addSkills: (state = [], action) => {
+            return [
+                ...state,
+                skills: action.payload,
+            ];
+        },
         changeImageUrl: (state, action) => {
             return {
                 ...state,
@@ -48,5 +54,5 @@ export const fetchImage = (imageUrl) => {
 
 
 
-export const { changeName, berthday } = slice.actions
+export const { changeName, berthday, addSkills } = slice.actions
 export default slice.reducer;
