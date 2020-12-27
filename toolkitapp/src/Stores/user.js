@@ -25,10 +25,10 @@ const slice = createSlice({
             }
         },
         addSkills: (state = [], action) => {
-            return [
+            return {
                 ...state,
                 skills: action.payload,
-            ];
+            };
         },
         changeImageUrl: (state, action) => {
             return {

@@ -9,18 +9,20 @@ const App = () => {
     const user = useSelector((state) => state.user);
     const [isShow, setIsShow] = useState(true);
     const [text, setText] = useState('');
-    const [subtext, setsubtext] = useState('');
+    const [subtext, setsubtext] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //textがaction.payloadにあたる。
         dispatch(changeName(text));
     };
-    const handleSubmit = (e) => {
+
+    const handleChange = (e) => {
         e.preventDefault();
         //subtextがaction.payloadにあたる。
         dispatch(addSkills(subtext));
     };
+
     return(
         <>
         <form onSubmit={handleSubmit}>
@@ -28,7 +30,7 @@ const App = () => {
             <button>Change</button>
         </form>
         <button onClick={() =>dispatch(berthday())}>誕生日</button>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleChange}>
             <input value={text} onChange={(e) => setsubtext(e.target.value)} />
             <button>Let's add Skills</button>
         </form>
